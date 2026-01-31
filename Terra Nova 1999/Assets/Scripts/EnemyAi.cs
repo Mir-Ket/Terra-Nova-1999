@@ -81,7 +81,7 @@ public class EnemyAi : MonoBehaviour
         }
         else if (RandomAttack == 11)
         {
-            int RandomAttack2 = Random.Range(1, 4);
+            int RandomAttack2 = Random.Range(1, 6);
             if (RandomAttack2 == 2)
             {
                 _anim.SetBool("Attack4", true);

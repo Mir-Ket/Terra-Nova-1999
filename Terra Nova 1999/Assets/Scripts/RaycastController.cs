@@ -11,6 +11,7 @@ public class RaycastController : MonoBehaviour
 
     [SerializeField] ParticleSystem _ShootParticle;
     [SerializeField] AudioSource _audio;
+    [SerializeField] AudioSource _clickAudio;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -46,12 +47,17 @@ public class RaycastController : MonoBehaviour
                 {
                     _anim.SetTrigger("Shoot");
                     _ShootParticle.Play();
-                   _audio.Play();
+                    _audio.Play();
 
                     InteractableObject.Interact();
                 }
 
 
+            }
+            else if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                _clickAudio.Play();
+                _audio.Stop();
             }
         }
 

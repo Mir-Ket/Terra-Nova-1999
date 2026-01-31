@@ -4,19 +4,26 @@ using static UnityEngine.GraphicsBuffer;
 public class BossAttacksEvents : MonoBehaviour
 {
     public Attack attack;
+
+    [Header ("Attack Control Object")]
     [SerializeField] GameObject _leftAttack;
     [SerializeField] GameObject _rightAttack;
     [SerializeField] GameObject _bigAttack;
     [SerializeField] GameObject _epicAttack;
 
-    [SerializeField] GameObject _particles;
-
+    [Header("Audio Effect")]
     [SerializeField] AudioSource _attack1;
     [SerializeField] AudioSource _attack2;
     [SerializeField] AudioSource _attack3;
     [SerializeField] AudioSource _attack4;
+    [SerializeField] AudioSource _electricEffect;
+    [SerializeField] AudioSource _robotEffect;
+
+    [Header("Anim & Particle")]
 
     [SerializeField] Animator _anim;
+    [SerializeField] GameObject _particles;
+
 
 
     public void LeftHandenable()
@@ -88,13 +95,15 @@ public class BossAttacksEvents : MonoBehaviour
     public void Vfxdenable()
     {
     _particles.SetActive(true);
-
+        _electricEffect.Play();
+        _robotEffect.Play();
 
     }
     public void VfxkDisable()
     {
         _particles.SetActive(false);
-
+        _electricEffect.Stop();
+        _robotEffect.Stop();
 
     }
 

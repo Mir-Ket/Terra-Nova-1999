@@ -6,7 +6,6 @@ public class Shoot : MonoBehaviour,IInteractable
     public HealthSystem _healthSystem;
 
     [SerializeField] float _shootDamage;
-    [SerializeField] float _shootSpeed;
 
     public void Interact()
     {

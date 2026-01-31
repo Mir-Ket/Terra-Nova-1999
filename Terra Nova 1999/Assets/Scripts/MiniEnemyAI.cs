@@ -50,7 +50,7 @@ void Start()
         {
             ChasePlayer();
         }
-        // 3. Durum: Çok uzaksa -> DUR / DEVRİYE AT
+       
         else
         {
             StopChasing();
